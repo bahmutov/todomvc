@@ -8,7 +8,8 @@
     "test": "cypress run",
     "test:ci": "start-test 8888",
     "run": "cypress run",
-    "open": "cypress open"
+    "open": "cypress open",
+    "deploy": "now-pipeline --as CYPRESS_baseUrl --test \"npm run run\""
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/bahmutov/todomvc#readme",
   "devDependencies": {
     "cypress": "3.1.0",
+    "now-pipeline": "1.10.0",
     "start-server-and-test": "1.7.0"
   },
   "dependencies": {
