@@ -7,7 +7,9 @@
     "start": "http-server -p 8888 -c-1 --silent",
     "test": "cypress run",
     "test:ci": "start-test 8888",
+    "test:ci:record": "start-test 8888 record",
     "run": "cypress run",
+    "record": "cypress run --record",
     "open": "cypress open",
     "deploy": "now-pipeline --as CYPRESS_baseUrl --test \"npm run run\""
   },
