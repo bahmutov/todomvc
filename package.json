@@ -9,7 +9,7 @@
     "test:ci": "start-test 8888",
     "test:ci:record": "start-test 8888 cy:record",
     "cy:run": "cypress run",
-    "cy:record": "cypress run --record",
+    "cy:record": "cypress run --record --parallel",
     "cy:open": "cypress open",
     "cy:verify": "cypress verify",
     "deploy": "now-pipeline --as CYPRESS_baseUrl --test \"npm run run\""

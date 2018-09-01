@@ -46,32 +46,6 @@ jobs:
           at: ~/
       - run: npm run test:ci:record
 
-  4x-electron:
-    <<: *defaults
-    # tell CircleCI to execute this job on 4 machines simultaneously
-    parallelism: 4
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          command: npm start
-          background: true
-      # runs Cypress test in load balancing (parallel) mode
-      # and groups them in Cypress Dashboard under name "4x-electron"
-      - run: npm run e2e:record -- --parallel --group $CIRCLE_JOB
-
-  2x-chrome:
-    <<: *defaults
-    # execute this job on 2 CI machines
-    parallelism: 2
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          command: npm start
-          background: true
-      - run: npm run e2e:record -- --parallel --group $CIRCLE_JOB --browser chrome
-
 workflows:
   version: 2
   build_and_test:
