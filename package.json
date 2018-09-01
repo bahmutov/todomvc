@@ -7,7 +7,7 @@
     "start": "http-server -p 8888 -c-1 --silent",
     "test": "cypress run",
     "test:ci": "start-test 8888",
-    "test:ci:record": "start-test 8888 record",
+    "test:ci:record": "start-test 8888 cy:record",
     "cy:run": "cypress run",
     "cy:record": "cypress run --record",
     "cy:open": "cypress open",
