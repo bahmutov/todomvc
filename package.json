@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 8888 -c-1 --silent",
+    "test": "cypress run",
+    "test:ci": "start-test 8888",
     "run": "cypress run",
     "open": "cypress open"
   },
@@ -20,6 +22,14 @@
   },
   "homepage": "https://github.com/bahmutov/todomvc#readme",
   "devDependencies": {
-    "cypress": "3.1.0"
+    "cypress": "3.1.0",
+    "start-server-and-test": "1.7.0"
+  },
+  "dependencies": {
+    "http-server": "0.11.1",
+    "director": "1.2.8",
+    "react": "0.13.3",
+    "todomvc-app-css": "2.1.2",
+    "todomvc-common": "cypress-io/todomvc-common#88b7c6359ad4a5097312d8b2a21dd539ce9f4446"
   }
 }
