@@ -1,0 +1,45 @@
+{
+  "name": "todomvc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 8888 -c-1 --silent",
+    "test": "cypress run",
+    "test:ci": "start-test 8888",
+    "test:ci:record": "start-test 8888 cy:record",
+    "cy:run": "cypress run",
+    "cy:record": "cypress run --record --parallel",
+    "cy:open": "cypress open",
+    "cy:verify": "cypress verify",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/todomvc.git"
+  },
+  "keywords": [],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com> (https://glebbahmutov.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/todomvc/issues"
+  },
+  "homepage": "https://github.com/bahmutov/todomvc#readme",
+  "devDependencies": {
+    "cypress": "3.1.0",
+    "gh-pages": "1.2.0",
+    "now-pipeline": "1.10.0",
+    "start-server-and-test": "1.7.0"
+  },
+  "dependencies": {
+    "http-server": "0.11.1",
+    "director": "1.2.8",
+    "react": "0.13.3",
+    "todomvc-app-css": "2.1.2",
+    "todomvc-common": "cypress-io/todomvc-common#88b7c6359ad4a5097312d8b2a21dd539ce9f4446"
+  },
+  "files": [
+    "index.html",
+    "js"
+  ]
+}
