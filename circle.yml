@@ -38,6 +38,8 @@ jobs:
 
   test-locally:
     <<: *defaults
+    # run this job on 2 machines at once
+    parallelism: 2
     steps:
       # restore application and Cypress binary before running the test command
       - attach_workspace:
