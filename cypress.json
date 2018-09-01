@@ -1,3 +1,4 @@
 {
-  "baseUrl": "http://todomvc.com/examples/react/"
+  "baseUrl": "http://localhost:8888",
+  "projectId": "r9294v"
 }

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 it('adds 2 todos', () => {
-  cy.visit('http://todomvc.com/examples/vue/')
+  cy.visit('/')
   cy.get('.new-todo')
     .type('learn testing{enter}')
     .type('be cool{enter}')
