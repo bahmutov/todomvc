@@ -29,6 +29,7 @@ jobs:
           paths:
             - ~/.npm
             - ~/.cache
+
       # all other test jobs will run AFTER this build job finishes
       # to avoid reinstalling dependencies, we persist the source folder "app"
       # and the Cypress binary to workspace, which is the fastest way
@@ -38,6 +39,7 @@ jobs:
           paths:
             - app
             - .cache/Cypress
+            - .ssh
 
   test-locally:
     <<: *defaults
@@ -58,7 +60,7 @@ jobs:
       # - add_ssh_keys:
       #     fingerprints:
       #       - "e1:4d:fa:0b:d4:6a:60:8b:60:40:91:c9:19:b6:1a:20"
-      - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+      # - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - run: npm run deploy
 
 workflows:
