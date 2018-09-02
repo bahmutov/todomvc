@@ -59,6 +59,14 @@ jobs:
           at: ~/
       - run: npm run deploy
 
+  post-deploy-test:
+    <<: *defaults
+    steps:
+      # restore application and Cypress binary before running the test command
+      - attach_workspace:
+          at: ~/
+      - run: npm run test:smoke -- --record --group "Smoke test"
+
 workflows:
   version: 2
   build_and_test:
@@ -73,3 +81,6 @@ workflows:
       - deploy:
           requires:
             - test-locally
+      - post-deploy-test:
+          requires:
+            - deploy

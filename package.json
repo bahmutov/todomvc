@@ -8,6 +8,7 @@
     "test": "cypress run",
     "test:ci": "start-test 8888",
     "test:ci:record": "start-test 8888 cy:record",
+    "test:smoke": "CYPRESS_baseUrl=https://glebbahmutov.com/todomvc cypress run --spec cypress/integration/first.js",
     "cy:run": "cypress run",
     "cy:record": "cypress run --record --parallel",
     "cy:open": "cypress open",
