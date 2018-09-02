@@ -10,7 +10,7 @@
     "test:ci:record": "start-test 8888 cy:record",
     "test:smoke": "CYPRESS_baseUrl=https://glebbahmutov.com/todomvc cypress run --spec cypress/integration/first.js",
     "cy:run": "cypress run",
-    "cy:record": "cypress run --record --parallel",
+    "cy:record": "cypress run --record --parallel --group 'all tests'",
     "cy:open": "cypress open",
     "cy:verify": "cypress verify",
     "deploy": "gh-pages -d dist"
