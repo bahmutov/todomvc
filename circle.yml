@@ -57,10 +57,6 @@ jobs:
       # restore application and Cypress binary before running the test command
       - attach_workspace:
           at: ~/
-      # - add_ssh_keys:
-      #     fingerprints:
-      #       - "e1:4d:fa:0b:d4:6a:60:8b:60:40:91:c9:19:b6:1a:20"
-      # - run: ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - run: npm run deploy
 
 workflows:
@@ -73,6 +69,7 @@ workflows:
       - test-locally:
           requires:
             - build
+      # pushes app to https://glebbahmutov.com/todomvc
       - deploy:
           requires:
             - test-locally
