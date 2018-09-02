@@ -46,11 +46,24 @@ jobs:
           at: ~/
       - run: npm run test:ci:record
 
+  deploy:
+    <<: *defaults
+    steps:
+      # restore application and Cypress binary before running the test command
+      - attach_workspace:
+          at: ~/
+      - run: npm run deploy
+
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
+      # runs a couple of machines in parallel
+      # with load balanced all tests against a local server
       - test-locally:
           requires:
             - build
+      - deploy:
+          requires:
+            - test-locally
