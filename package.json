@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -p 8888 -c-1 --silent",
+    "start": "http-server dist -p 8888 -c-1 --silent",
     "test": "cypress run",
     "test:ci": "start-test 8888",
     "test:ci:record": "start-test 8888 cy:record",
@@ -12,7 +12,7 @@
     "cy:record": "cypress run --record --parallel",
     "cy:open": "cypress open",
     "cy:verify": "cypress verify",
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
