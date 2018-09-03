@@ -56,9 +56,6 @@ jobs:
 
   deploy:
     <<: *defaults
-    branches:
-      only:
-        - master
     steps:
       # restore application and Cypress binary before running the test command
       - attach_workspace:
@@ -67,9 +64,6 @@ jobs:
 
   post-deploy-test:
     <<: *defaults
-    branches:
-      only:
-        - master
     steps:
       # restore application and Cypress binary before running the test command
       - attach_workspace:
@@ -88,8 +82,14 @@ workflows:
             - build
       # pushes app to https://glebbahmutov.com/todomvc
       - deploy:
+          branches:
+            only:
+              - master
           requires:
             - test-locally
       - post-deploy-test:
+          branches:
+            only:
+              - master
           requires:
             - deploy
