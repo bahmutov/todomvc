@@ -82,14 +82,16 @@ workflows:
             - build
       # pushes app to https://glebbahmutov.com/todomvc
       - deploy:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - test-locally
       - post-deploy-test:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
           requires:
             - deploy
