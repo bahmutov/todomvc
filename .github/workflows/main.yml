@@ -17,7 +17,7 @@ jobs:
           headed: false
           config-file: cypress.config.js
           
-  cypress-run-docker-chrome:
+  cypress-run-windows-2019-chrome:
     runs-on: windows-2019
     name: E2E on windows-chrome
     # Cypress Docker image from https://hub.docker.com/r/cypress
