@@ -8,7 +8,7 @@
     "test": "cypress run",
     "test:ci": "start-test 8888",
     "test:ci:record": "start-test 8888 cy:record",
-    "test:smoke": "CYPRESS_baseUrl=https://glebbahmutov.com/todomvc cypress run --spec cypress/e2e/first.js",
+    "test:smoke": "cypress run -b chrome --headed -s 'cypress/e2e'",
     "cy:run": "cypress run",
     "cy:record": "cypress run --record --parallel --group 'All tests'",
     "cy:open": "cypress open",
