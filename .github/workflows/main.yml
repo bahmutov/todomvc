@@ -6,11 +6,11 @@ jobs:
     name: E2E on Chrome
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.6
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6.7.0
         with:
           spec: cypress/e2e
           browser: chrome
@@ -27,9 +27,9 @@ jobs:
       options: --user 1001
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.6
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6.7.0
         with:
           spec: cypress/e2e
           browser: chrome
@@ -46,9 +46,9 @@ jobs:
         options: --user 1001
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.6
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6.7.0
         with:
           spec: cypress/e2e
           browser: edge
@@ -65,9 +65,9 @@ jobs:
         options: --user 1001
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.6
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v6.7.0
         with:
           spec: cypress/e2e
           browser: firefox
