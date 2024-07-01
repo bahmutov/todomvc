@@ -33,11 +33,11 @@ jobs:
         with:
           spec: cypress/e2e
           browser: chrome
-          headed: true
+          headed: false
           config-file: cypress.config.js
             
-  cypress-run-macos-edge:
-    runs-on: macos-13
+  cypress-run-edge:
+    runs-on: ubuntu-22.04
     name: Docker E2E on edge
     # Cypress Docker image from https://hub.docker.com/r/cypress
     # with browsers pre-installed
@@ -52,11 +52,11 @@ jobs:
         with:
           spec: cypress/e2e
           browser: edge
-          headed: true
+          headed: false
           config-file: cypress.config.js
 
-  cypress-run-windows-firefox:
-    runs-on: windows-2022
+  cypress-run-firefox:
+    runs-on: ubuntu-22.04
     name: Docker E2E on firefox
     # Cypress Docker image from https://hub.docker.com/r/cypress
     # with browsers pre-installed
@@ -71,5 +71,5 @@ jobs:
         with:
           spec: cypress/e2e
           browser: firefox
-          headed: true  
+          headed: false
           config-file: cypress.config.js
