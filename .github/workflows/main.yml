@@ -23,7 +23,7 @@ jobs:
     # Cypress Docker image from https://hub.docker.com/r/cypress
     # with browsers pre-installed
     container:
-      image: cypress/browsers:latest
+      image: cypress/browsers:node-20.14.0-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
       options: --user 1001
     steps:
       - name: Checkout
@@ -42,7 +42,7 @@ jobs:
     # Cypress Docker image from https://hub.docker.com/r/cypress
     # with browsers pre-installed
     container:
-        image: cypress/browsers:latest
+        image: cypress/browsers:node-20.14.0-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
         options: --user 1001
     steps:
       - name: Checkout
@@ -61,7 +61,7 @@ jobs:
     # Cypress Docker image from https://hub.docker.com/r/cypress
     # with browsers pre-installed
     container:
-        image: cypress/browsers:latest
+        image: cypress/browsers:node-20.14.0-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
         options: --user 1001
     steps:
       - name: Checkout
@@ -70,6 +70,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           spec: cypress/e2e
-          browser: edge
+          browser: firefox
           headed: true  
           config-file: cypress.config.js
