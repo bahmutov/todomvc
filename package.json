@@ -28,7 +28,7 @@
   "homepage": "https://github.com/bahmutov/todomvc#readme",
   "devDependencies": {
     "cypress": "3.1.4",
-    "gh-pages": "1.2.0",
+    "gh-pages": "6.2.0",
     "now-pipeline": "1.10.0",
     "start-server-and-test": "1.7.11"
   },
