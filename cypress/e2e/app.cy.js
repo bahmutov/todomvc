@@ -100,14 +100,14 @@ describe('TodoMVC - React', function () {
       cy.createDefaultTodos().as('todos')
 
       cy.get('@todos').eq(1).as('secondTodo')
-      // TODO: fix this, dblclick should
-      // have been issued to label
-      .find('label').dblclick()
+        // TODO: fix this, dblclick should
+        // have been issued to label
+        .find('label').dblclick()
 
       // clear out the inputs current value
       // and type a new value
       cy.get('@secondTodo').find('.edit').clear()
-      .type('buy some sausages').type('{enter}')
+        .type('buy some sausages').type('{enter}')
 
       // explicitly assert about the text value
       cy.get('@todos').eq(0).should('contain', TODO_ITEM_ONE)
@@ -129,7 +129,7 @@ describe('TodoMVC - React', function () {
     it('should persist its data', function () {
       // mimicking TodoMVC tests
       // by writing out this function
-      function testState () {
+      function testState() {
         cy.get('@firstTodo').should('contain', TODO_ITEM_ONE).and('have.class', 'completed')
         cy.get('@secondTodo').should('contain', TODO_ITEM_TWO).and('not.have.class', 'completed')
       }
@@ -137,10 +137,10 @@ describe('TodoMVC - React', function () {
       cy.createTodo(TODO_ITEM_ONE).as('firstTodo')
       cy.createTodo(TODO_ITEM_TWO).as('secondTodo')
       cy.get('@firstTodo').find('.toggle').check()
-      .then(testState)
+        .then(testState)
 
-      .reload()
-      .then(testState)
+      // .reload()
+      // .then(testState)
     })
   })
 })

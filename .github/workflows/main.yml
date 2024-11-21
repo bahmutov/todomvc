@@ -1,0 +1,75 @@
+name: End-to-end tests
+on: push
+jobs:
+  cypress-run-chrome-latest:
+    runs-on: ubuntu-latest
+    name: E2E on Chrome
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.7.0
+        with:
+          spec: cypress/e2e
+          browser: chrome
+          headed: false
+          config-file: cypress.config.js
+          
+  cypress-run-linux-docker:
+    runs-on: ubuntu-22.04
+    name: Docker E2E on Chrome
+    # Cypress Docker image from https://hub.docker.com/r/cypress
+    # with browsers pre-installed
+    container:
+      image: cypress/browsers:node-20.14.0-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
+      options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.7.0
+        with:
+          spec: cypress/e2e
+          browser: chrome
+          headed: false
+          config-file: cypress.config.js
+            
+  cypress-run-edge:
+    runs-on: ubuntu-22.04
+    name: Docker E2E on edge
+    # Cypress Docker image from https://hub.docker.com/r/cypress
+    # with browsers pre-installed
+    container:
+        image: cypress/browsers:node-20.14.0-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
+        options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.7.0
+        with:
+          spec: cypress/e2e
+          browser: edge
+          headed: false
+          config-file: cypress.config.js
+
+  cypress-run-firefox:
+    runs-on: ubuntu-22.04
+    name: Docker E2E on firefox
+    # Cypress Docker image from https://hub.docker.com/r/cypress
+    # with browsers pre-installed
+    container:
+        image: cypress/browsers:node-20.14.0-chrome-125.0.6422.141-1-ff-126.0.1-edge-125.0.2535.85-1
+        options: --user 1001
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      - name: Cypress run
+        uses: cypress-io/github-action@v6.7.0
+        with:
+          spec: cypress/e2e
+          browser: firefox
+          headed: false
+          config-file: cypress.config.js

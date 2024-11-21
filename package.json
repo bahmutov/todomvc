@@ -8,7 +8,7 @@
     "test": "cypress run",
     "test:ci": "start-test 8888",
     "test:ci:record": "start-test 8888 cy:record",
-    "test:smoke": "CYPRESS_baseUrl=https://glebbahmutov.com/todomvc cypress run --spec cypress/integration/first.js",
+    "test:smoke": "cypress run -b chrome --headed -s 'cypress/e2e'",
     "cy:run": "cypress run",
     "cy:record": "cypress run --record --parallel --group 'All tests'",
     "cy:open": "cypress open",
@@ -27,16 +27,16 @@
   },
   "homepage": "https://github.com/bahmutov/todomvc#readme",
   "devDependencies": {
-    "cypress": "3.1.4",
-    "gh-pages": "1.2.0",
+    "cypress": "13.12.0",
+    "gh-pages": "6.1.1",
     "now-pipeline": "1.10.0",
-    "start-server-and-test": "1.7.11"
+    "start-server-and-test": "2.0.4"
   },
   "dependencies": {
-    "http-server": "0.11.1",
+    "http-server": "14.1.1",
     "director": "1.2.8",
-    "react": "0.14.9",
-    "todomvc-app-css": "2.1.2",
+    "react": "18.3.1",
+    "todomvc-app-css": "2.4.3",
     "todomvc-common": "cypress-io/todomvc-common#88b7c6359ad4a5097312d8b2a21dd539ce9f4446"
   },
   "files": [
