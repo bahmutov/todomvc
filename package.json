@@ -33,7 +33,7 @@
     "start-server-and-test": "1.7.11"
   },
   "dependencies": {
-    "http-server": "0.11.1",
+    "http-server": "14.1.1",
     "director": "1.2.8",
     "react": "0.14.9",
     "todomvc-app-css": "2.1.2",
